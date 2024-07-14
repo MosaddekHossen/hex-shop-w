@@ -1,6 +1,7 @@
 <?php
 function hexShop_add_theme_scripts()
 {
+    wp_enqueue_style('hexShop-fonts', hexShop_fonts_url(), array(), '1.1', 'all');
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '1.1', 'all');
     wp_enqueue_style('slider', get_template_directory_uri() . '/assets/css/flex-slider.css', array(), '1.1', 'all');
     wp_enqueue_style('awesome', get_template_directory_uri() . '/assets/css/font-awesome.css', array(), '1.1', 'all');
@@ -29,3 +30,17 @@ function hexShop_add_theme_scripts()
     }
 }
 add_action('wp_enqueue_scripts', 'hexShop_add_theme_scripts');
+
+// HexShop fonts
+function hexShop_fonts_url()
+{
+    $font_url = '';
+    /*
+    Translators: If there are characters in your language that are not supported
+    by the chosen font(s), translate this to 'off'. Do not translate into your language.
+     */
+    if ('off' !== _x('on', 'Google font: on or off', 'hexShop')) {
+        $font_url = 'https://fonts.googleapis.com/css?' . urlencode('family=Poppins:100,200,300,400,500,600,700,800,900');
+    }
+    return $font_url;
+}
