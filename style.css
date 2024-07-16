@@ -20,3 +20,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
 header.header-area {
   margin-top: 32px;
 }
+
+.header-area .nav {
+  margin-top: 10px !important;
+}
+
+ul.sub-menu {
+  display: none;
+}
+
+ul li:hover .sub-menu {
+  display: block !important;
+}
